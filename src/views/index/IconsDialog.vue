@@ -80,7 +80,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .icon-ul {
   margin: 0;
   padding: 0;

@@ -1,4 +1,4 @@
-$editorTabsborderColor: #121315;
+@editorTabsborderColor: #121315;
 body, html{
   margin: 0;
   padding: 0;
@@ -14,32 +14,32 @@ input, textarea{
 }
 
 .editor-tabs{
-  background: $editorTabsborderColor;
-  .lk-tabs__header{
+  background: @editorTabsborderColor;
+  .el-tabs__header{
     margin: 0;
-    border-bottom-color: $editorTabsborderColor;
-    .lk-tabs__nav{
-      border-color: $editorTabsborderColor;
+    border-bottom-color: @editorTabsborderColor;
+    .el-tabs__nav{
+      border-color: @editorTabsborderColor;
     }
   }
-  .lk-tabs__item{
+  .el-tabs__item{
     height: 32px;
     line-height: 32px;
     color: #888a8e;
-    border-left: 1px solid $editorTabsborderColor!important;
+    border-left: 1px solid @editorTabsborderColor!important;
     background: #363636;
     margin-right: 5px;
     user-select: none;
   }
-  .lk-tabs__item.is-active{
+  .el-tabs__item.is-active{
     background: #1e1e1e;
     border-bottom-color: #1e1e1e!important;
     color: #fff;
   }
-  .lk-icon-edit{
+  .el-icon-edit{
     color: #f1fa8c;
   }
-  .lk-icon-document{
+  .el-icon-document{
     color: #a95812;
   }
   :focus.is-active.is-focus:not(:active) {
@@ -50,24 +50,24 @@ input, textarea{
 
 // home
 .right-scrollbar {
-  .lk-scrollbar__view {
+  .el-scrollbar__view {
     padding: 12px 18px 15px 15px;
   }
 }
-.lk-scrollbar__wrap {
+.el-scrollbar__wrap {
   box-sizing: border-box;
   overflow-x: hidden !important;
   margin-bottom: 0 !important;
 }
 .center-tabs{
-  .lk-tabs__header{
+  .el-tabs__header{
     margin-bottom: 0!important;
   }
-  .lk-tabs__item{
+  .el-tabs__item{
     width: 50%;
     text-align: center;
   }
-  .lk-tabs__nav{
+  .el-tabs__nav{
     width: 100%;
   }
 }
@@ -100,7 +100,7 @@ input, textarea{
   }
 }
 .action-bar{
-  & .lk-button+.lk-button {
+  & .el-button+.el-button {
     margin-left: 15px;
   }
   & i {
@@ -117,25 +117,25 @@ input, textarea{
   .node-operation{
     float: right;
   }
-  i[class*="lk-icon"] + i[class*="lk-icon"]{
+  i[class*="el-icon"] + i[class*="el-icon"]{
     margin-left: 6px;
   }
-  .lk-icon-plus{
+  .el-icon-plus{
     color: #409EFF;
   }
-  .lk-icon-delete{
+  .el-icon-delete{
     color: #157a0c;
   }
 }
 
-.lk-scrollbar__view{
+.el-scrollbar__view{
   overflow-x: hidden;
 }
 
-.lk-rate{
+.el-rate{
   display: inline-block;
   vertical-align: text-top;
 }
-.lk-upload__tip{
+.el-upload__tip{
   line-height: 1.2;
 }

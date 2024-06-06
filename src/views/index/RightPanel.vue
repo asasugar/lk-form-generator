@@ -973,7 +973,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .right-board {
   width: 350px;
   position: absolute;

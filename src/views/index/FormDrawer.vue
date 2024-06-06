@@ -290,8 +290,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles/mixin.scss';
+<style lang="less" scoped>
+@import '../../styles/mixin.less';
+
 .tab-editor {
   position: absolute;
   top: 33px;
@@ -325,7 +326,7 @@ export default {
     box-sizing: border-box;
   }
 }
-@include action-bar;
+.actionBar();
 ::v-deep .lk-drawer__header {
   display: none;
 }

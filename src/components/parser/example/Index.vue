@@ -315,7 +315,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .test-form {
   margin: 15px auto;
   width: 800px;

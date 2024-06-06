@@ -106,7 +106,7 @@ export default {
 }
 
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .add-item{
   margin-top: 8px;
 }

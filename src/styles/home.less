@@ -1,5 +1,5 @@
-$selectedColor: #f6f7ff;
-$lighterBlue: #409EFF;
+@selectedColor: #f6f7ff;
+@lighterBlue: #409EFF;
 
 .container {
   position: relative;
@@ -33,10 +33,10 @@ $lighterBlue: #409EFF;
 
 .components-body {
   padding: 8px 10px;
-  background: $selectedColor;
+  background: @selectedColor;
   font-size: 12px;
   cursor: move;
-  border: 1px dashed $selectedColor;
+  border: 1px dashed @selectedColor;
   border-radius: 3px;
   .svg-icon{
     color: #777;
@@ -132,7 +132,7 @@ $lighterBlue: #409EFF;
 .center-board-row {
   padding: 12px 12px 15px 12px;
   box-sizing: border-box;
-  & > .lk-form {
+  & > .el-form {
     // 69 = 12+15+42
     height: calc(100vh - 69px);
   }
@@ -163,21 +163,21 @@ $lighterBlue: #409EFF;
   .components-item.sortable-ghost {
     width: 100%;
     height: 60px;
-    background-color: $selectedColor;
+    background-color: @selectedColor;
   }
   .active-from-item {
-    & > .lk-form-item{
-      background: $selectedColor;
+    & > .el-form-item{
+      background: @selectedColor;
       border-radius: 6px;
     }
     & > .drawing-item-copy, & > .drawing-item-delete{
       display: initial;
     }
     & > .component-name{
-      color: $lighterBlue;
+      color: @lighterBlue;
     }
   }
-  .lk-form-item{
+  .el-form-item{
     margin-bottom: 15px;
   }
 }
@@ -187,7 +187,7 @@ $lighterBlue: #409EFF;
   &.unfocus-bordered:not(.active-from-item) > div:first-child {
     border: 1px dashed #ccc;
   }
-  .lk-form-item{
+  .el-form-item{
     padding: 12px 10px;
   }
 }
@@ -202,17 +202,17 @@ $lighterBlue: #409EFF;
   .drawing-row-item {
     margin-bottom: 2px;
   }
-  .lk-col{
+  .el-col{
     margin-top: 22px;
   }
-  .lk-form-item{
+  .el-form-item{
     margin-bottom: 0;
   }
   .drag-wrapper{
     min-height: 80px;
   }
   &.active-from-item{
-    border: 1px dashed $lighterBlue;
+    border: 1px dashed @lighterBlue;
   }
   .component-name{
     position: absolute;
@@ -226,8 +226,8 @@ $lighterBlue: #409EFF;
 }
 .drawing-item, .drawing-row-item{
   &:hover {
-    & > .lk-form-item{
-      background: $selectedColor;
+    & > .el-form-item{
+      background: @selectedColor;
       border-radius: 6px;
     }
     & > .drawing-item-copy, & > .drawing-item-delete{
@@ -250,11 +250,11 @@ $lighterBlue: #409EFF;
   }
   & > .drawing-item-copy{
     right: 56px;
-    border-color: $lighterBlue;
-    color: $lighterBlue;
+    border-color: @lighterBlue;
+    color: @lighterBlue;
     background: #fff;
     &:hover{
-      background: $lighterBlue;
+      background: @lighterBlue;
       color: #fff;
     }
   }

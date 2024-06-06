@@ -130,13 +130,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles/mixin.scss';
+<style lang="less" scoped>
+@import '../../styles/mixin.less';
 
 ::v-deep .lk-drawer__header {
   display: none;
 }
-@include action-bar;
+.actionBar();
 
 .json-editor{
   height: calc(100vh - 33px);

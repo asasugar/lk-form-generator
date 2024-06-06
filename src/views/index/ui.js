@@ -48,6 +48,7 @@ import {
   LkRadioButton,
   LkRadioGroup,
   LkRow,
+  LkScrollbar,
   LkSelect,
   LkSelectPlus,
   LkSlider,
@@ -130,3 +131,4 @@ Vue.use(LkEditableCell);
 Vue.use(LkNotification);
 Vue.use(LkColorPicker);
 Vue.use(LkAlert);
+Vue.use(LkScrollbar);

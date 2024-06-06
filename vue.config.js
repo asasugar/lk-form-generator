@@ -1,5 +1,4 @@
 const path = require('path')
-const os = require('os');
 
 const minify = process.env.NODE_ENV === 'development' ? false : {
   collapseWhitespace: true,

@@ -467,6 +467,6 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-@import '@/styles/home';
+<style lang='less'>
+@import '../../styles/home.less';
 </style>
