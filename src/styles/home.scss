@@ -132,7 +132,7 @@ $lighterBlue: #409EFF;
 .center-board-row {
   padding: 12px 12px 15px 12px;
   box-sizing: border-box;
-  & > .el-form {
+  & > .lk-form {
     // 69 = 12+15+42
     height: calc(100vh - 69px);
   }
@@ -166,7 +166,7 @@ $lighterBlue: #409EFF;
     background-color: $selectedColor;
   }
   .active-from-item {
-    & > .el-form-item{
+    & > .lk-form-item{
       background: $selectedColor;
       border-radius: 6px;
     }
@@ -177,7 +177,7 @@ $lighterBlue: #409EFF;
       color: $lighterBlue;
     }
   }
-  .el-form-item{
+  .lk-form-item{
     margin-bottom: 15px;
   }
 }
@@ -187,7 +187,7 @@ $lighterBlue: #409EFF;
   &.unfocus-bordered:not(.active-from-item) > div:first-child {
     border: 1px dashed #ccc;
   }
-  .el-form-item{
+  .lk-form-item{
     padding: 12px 10px;
   }
 }
@@ -202,10 +202,10 @@ $lighterBlue: #409EFF;
   .drawing-row-item {
     margin-bottom: 2px;
   }
-  .el-col{
+  .lk-col{
     margin-top: 22px;
   }
-  .el-form-item{
+  .lk-form-item{
     margin-bottom: 0;
   }
   .drag-wrapper{
@@ -226,7 +226,7 @@ $lighterBlue: #409EFF;
 }
 .drawing-item, .drawing-row-item{
   &:hover {
-    & > .el-form-item{
+    & > .lk-form-item{
       background: $selectedColor;
       border-radius: 6px;
     }

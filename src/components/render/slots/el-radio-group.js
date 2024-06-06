@@ -3,9 +3,9 @@ export default {
     const list = []
     conf.__slot__.options.forEach(item => {
       if (conf.__config__.optionType === 'button') {
-        list.push(<el-radio-button label={item.value}>{item.label}</el-radio-button>)
+        list.push(<lk-radio-button label={item.value}>{item.label}</lk-radio-button>)
       } else {
-        list.push(<el-radio label={item.value} border={conf.border}>{item.label}</el-radio>)
+        list.push(<lk-radio label={item.value} border={conf.border}>{item.label}</lk-radio>)
       }
     })
     return list

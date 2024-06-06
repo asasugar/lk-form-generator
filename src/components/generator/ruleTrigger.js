@@ -3,14 +3,14 @@
  * 未在此处声明无触发方式的组件将不生成rule！！
  */
 export default {
-  'el-input': 'blur',
-  'el-input-number': 'blur',
-  'el-select': 'change',
-  'el-radio-group': 'change',
-  'el-checkbox-group': 'change',
-  'el-cascader': 'change',
-  'el-time-picker': 'change',
-  'el-date-picker': 'change',
-  'el-rate': 'change',
+  'lk-input': 'blur',
+  'lk-input-number': 'blur',
+  'lk-select': 'change',
+  'lk-radio-group': 'change',
+  'lk-checkbox-group': 'change',
+  'lk-cascader': 'change',
+  'lk-time-picker': 'change',
+  'lk-date-picker': 'change',
+  'lk-rate': 'change',
   tinymce: 'blur'
 }

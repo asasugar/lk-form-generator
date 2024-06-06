@@ -1,4 +1,5 @@
 const path = require('path')
+const os = require('os');
 
 const minify = process.env.NODE_ENV === 'development' ? false : {
   collapseWhitespace: true,
@@ -42,11 +43,36 @@ module.exports = {
   configureWebpack: {
     externals: {
       vue: 'Vue',
-      'vue-router': 'VueRouter',
-      'element-ui': 'ELEMENT'
+      'vue-router': 'VueRouter'
     }
   },
   chainWebpack(config) {
+    // js
+    config.module
+      .rule('babel')
+      .test(/\.js$/)
+      .exclude.add(/node_modules/)
+      .end()
+      .use('babel-loader')
+      .loader('babel-loader')
+      .options({
+        plugins: [
+          ['@babel/plugin-proposal-decorators', { legacy: true }],
+          ['@babel/plugin-proposal-optional-chaining'],
+          ['@babel/plugin-syntax-jsx'],
+          [
+            'component',
+            {
+              libraryName: '@lucky/lucky-ui',
+              styleLibrary: {
+                name: 'theme',
+                base: false
+              }
+            }
+          ]
+        ]
+      })
+      .end();
     // set svg-sprite-loader
     config.module
       .rule('svg')

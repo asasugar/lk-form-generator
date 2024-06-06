@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog
+    <lk-dialog
       v-bind="$attrs"
       title="外部资源引用"
       width="600px"
@@ -9,54 +9,54 @@
       @open="onOpen"
       @close="onClose"
     >
-      <el-input
+      <lk-input
         v-for="(item, index) in resources"
         :key="index"
         v-model="resources[index]"
         class="url-item"
         placeholder="请输入 css 或 js 资源路径"
-        prefix-icon="el-icon-link"
+        prefix-icon="lk-icon-link"
         clearable
       >
-        <el-button
+        <lk-button
           slot="append"
-          icon="el-icon-delete"
+          icon="lk-icon-delete"
           @click="deleteOne(index)"
         />
-      </el-input>
-      <el-button-group class="add-item">
-        <el-button
+      </lk-input>
+      <lk-button-group class="add-item">
+        <lk-button
           plain
           @click="addOne('https://lib.baomitu.com/jquery/1.8.3/jquery.min.js')"
         >
           jQuery1.8.3
-        </el-button>
-        <el-button
+        </lk-button>
+        <lk-button
           plain
           @click="addOne('https://unpkg.com/http-vue-loader')"
         >
           http-vue-loader
-        </el-button>
-        <el-button
-          icon="el-icon-circle-plus-outline"
+        </lk-button>
+        <lk-button
+          icon="lk-icon-circle-plus-outline"
           plain
           @click="addOne('')"
         >
           添加其他
-        </el-button>
-      </el-button-group>
+        </lk-button>
+      </lk-button-group>
       <div slot="footer">
-        <el-button @click="close">
+        <lk-button @click="close">
           取消
-        </el-button>
-        <el-button
+        </lk-button>
+        <lk-button
           type="primary"
           @click="handelConfirm"
         >
           确定
-        </el-button>
+        </lk-button>
       </div>
-    </el-dialog>
+    </lk-dialog>
   </div>
 </template>
 <script>

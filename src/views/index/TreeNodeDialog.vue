@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog
+    <lk-dialog
       v-bind="$attrs"
       :close-on-click-modal="false"
       :modal-append-to-body="false"
@@ -8,66 +8,66 @@
       @open="onOpen"
       @close="onClose"
     >
-      <el-row :gutter="0">
-        <el-form
+      <lk-row :gutter="0">
+        <lk-form
           ref="elForm"
           :model="formData"
           :rules="rules"
           size="small"
           label-width="100px"
         >
-          <el-col :span="24">
-            <el-form-item
+          <lk-col :span="24">
+            <lk-form-item
               label="选项名"
               prop="label"
             >
-              <el-input
+              <lk-input
                 v-model="formData.label"
                 placeholder="请输入选项名"
                 clearable
               />
-            </el-form-item>
-          </el-col>
-          <el-col :span="24">
-            <el-form-item
+            </lk-form-item>
+          </lk-col>
+          <lk-col :span="24">
+            <lk-form-item
               label="选项值"
               prop="value"
             >
-              <el-input
+              <lk-input
                 v-model="formData.value"
                 placeholder="请输入选项值"
                 clearable
               >
-                <el-select
+                <lk-select
                   slot="append"
                   v-model="dataType"
                   :style="{width: '100px'}"
                 >
-                  <el-option
+                  <lk-option
                     v-for="(item, index) in dataTypeOptions"
                     :key="index"
                     :label="item.label"
                     :value="item.value"
                     :disabled="item.disabled"
                   />
-                </el-select>
-              </el-input>
-            </el-form-item>
-          </el-col>
-        </el-form>
-      </el-row>
+                </lk-select>
+              </lk-input>
+            </lk-form-item>
+          </lk-col>
+        </lk-form>
+      </lk-row>
       <div slot="footer">
-        <el-button
+        <lk-button
           type="primary"
           @click="handelConfirm"
         >
           确定
-        </el-button>
-        <el-button @click="close">
+        </lk-button>
+        <lk-button @click="close">
           取消
-        </el-button>
+        </lk-button>
       </div>
-    </el-dialog>
+    </lk-dialog>
   </div>
 </template>
 <script>

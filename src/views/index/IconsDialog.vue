@@ -1,6 +1,6 @@
 <template>
   <div class="icon-dialog">
-    <el-dialog
+    <lk-dialog
       v-bind="$attrs"
       width="980px"
       :modal-append-to-body="false"
@@ -10,12 +10,12 @@
     >
       <div slot="title">
         选择图标
-        <el-input
+        <lk-input
           v-model="key"
           size="mini"
           :style="{width: '260px'}"
           placeholder="请输入图标名称"
-          prefix-icon="el-icon-search"
+          prefix-icon="lk-icon-search"
           clearable
         />
       </div>
@@ -30,13 +30,13 @@
           <div>{{ icon }}</div>
         </li>
       </ul>
-    </el-dialog>
+    </lk-dialog>
   </div>
 </template>
 <script>
 import iconList from '@/utils/icon.json'
 
-const originList = iconList.map(name => `el-icon-${name}`)
+const originList = iconList.map(name => `lk-icon-${name}`)
 
 export default {
   inheritAttrs: false,
@@ -110,7 +110,7 @@ export default {
   }
 }
 .icon-dialog {
-  ::v-deep .el-dialog {
+  ::v-deep .lk-dialog {
     border-radius: 8px;
     margin-bottom: 0;
     margin-top: 4vh !important;
@@ -119,10 +119,10 @@ export default {
     max-height: 92vh;
     overflow: hidden;
     box-sizing: border-box;
-    .el-dialog__header {
+    .lk-dialog__header {
       padding-top: 14px;
     }
-    .el-dialog__body {
+    .lk-dialog__body {
       margin: 0 20px 20px 20px;
       padding: 0;
       overflow: auto;

@@ -1,26 +1,26 @@
 <template>
   <div>
-    <el-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
+    <lk-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
       <div class="action-bar" :style="{'text-align': 'left'}">
         <span class="bar-btn" @click="refresh">
-          <i class="el-icon-refresh" />
+          <i class="lk-icon-refresh" />
           刷新
         </span>
         <span ref="copyBtn" class="bar-btn copy-json-btn">
-          <i class="el-icon-document-copy" />
+          <i class="lk-icon-document-copy" />
           复制JSON
         </span>
         <span class="bar-btn" @click="exportJsonFile">
-          <i class="el-icon-download" />
+          <i class="lk-icon-download" />
           导出JSON文件
         </span>
         <span class="bar-btn delete-btn" @click="$emit('update:visible', false)">
-          <i class="el-icon-circle-close" />
+          <i class="lk-icon-circle-close" />
           关闭
         </span>
       </div>
       <div id="editorJson" class="json-editor" />
-    </el-drawer>
+    </lk-drawer>
   </div>
 </template>
 
@@ -133,7 +133,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/mixin.scss';
 
-::v-deep .el-drawer__header {
+::v-deep .lk-drawer__header {
   display: none;
 }
 @include action-bar;

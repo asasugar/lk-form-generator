@@ -21,7 +21,7 @@ export const inputComponents = [
       labelWidth: null,
       showLabel: true,
       changeTag: true,
-      tag: 'el-input',
+      tag: 'lk-input',
       tagIcon: 'input',
       defaultValue: undefined,
       required: true,
@@ -52,7 +52,7 @@ export const inputComponents = [
       label: '多行文本',
       labelWidth: null,
       showLabel: true,
-      tag: 'el-input',
+      tag: 'lk-input',
       tagIcon: 'textarea',
       defaultValue: undefined,
       required: true,
@@ -80,7 +80,7 @@ export const inputComponents = [
       showLabel: true,
       labelWidth: null,
       changeTag: true,
-      tag: 'el-input',
+      tag: 'lk-input',
       tagIcon: 'password',
       defaultValue: undefined,
       layout: 'colFormItem',
@@ -110,7 +110,7 @@ export const inputComponents = [
       showLabel: true,
       changeTag: true,
       labelWidth: null,
-      tag: 'el-input-number',
+      tag: 'lk-input-number',
       tagIcon: 'number',
       defaultValue: undefined,
       span: 24,
@@ -156,7 +156,7 @@ export const selectComponents = [
       label: '下拉选择',
       showLabel: true,
       labelWidth: null,
-      tag: 'el-select',
+      tag: 'lk-select',
       tagIcon: 'select',
       layout: 'colFormItem',
       span: 24,
@@ -190,7 +190,7 @@ export const selectComponents = [
       dataConsumer: 'options',
       showLabel: true,
       labelWidth: null,
-      tag: 'el-cascader',
+      tag: 'lk-cascader',
       tagIcon: 'cascader',
       layout: 'colFormItem',
       defaultValue: [],
@@ -232,7 +232,7 @@ export const selectComponents = [
       label: '单选框组',
       labelWidth: null,
       showLabel: true,
-      tag: 'el-radio-group',
+      tag: 'lk-radio-group',
       tagIcon: 'radio',
       changeTag: true,
       defaultValue: undefined,
@@ -260,7 +260,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '多选框组',
-      tag: 'el-checkbox-group',
+      tag: 'lk-checkbox-group',
       tagIcon: 'checkbox',
       defaultValue: [],
       span: 24,
@@ -292,7 +292,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '开关',
-      tag: 'el-switch',
+      tag: 'lk-switch',
       tagIcon: 'switch',
       defaultValue: false,
       span: 24,
@@ -316,7 +316,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '滑块',
-      tag: 'el-slider',
+      tag: 'lk-slider',
       tagIcon: 'slider',
       defaultValue: null,
       span: 24,
@@ -338,7 +338,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '时间选择',
-      tag: 'el-time-picker',
+      tag: 'lk-time-picker',
       tagIcon: 'time',
       defaultValue: null,
       span: 24,
@@ -363,7 +363,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '时间范围',
-      tag: 'el-time-picker',
+      tag: 'lk-time-picker',
       tagIcon: 'time-range',
       span: 24,
       showLabel: true,
@@ -388,7 +388,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '日期选择',
-      tag: 'el-date-picker',
+      tag: 'lk-date-picker',
       tagIcon: 'date',
       defaultValue: null,
       showLabel: true,
@@ -412,7 +412,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '日期范围',
-      tag: 'el-date-picker',
+      tag: 'lk-date-picker',
       tagIcon: 'date-range',
       defaultValue: null,
       span: 24,
@@ -438,7 +438,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '评分',
-      tag: 'el-rate',
+      tag: 'lk-rate',
       tagIcon: 'rate',
       defaultValue: 0,
       span: 24,
@@ -460,7 +460,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '颜色选择',
-      tag: 'el-color-picker',
+      tag: 'lk-color-picker',
       tagIcon: 'color',
       span: 24,
       defaultValue: null,
@@ -480,7 +480,7 @@ export const selectComponents = [
   {
     __config__: {
       label: '上传',
-      tag: 'el-upload',
+      tag: 'lk-upload',
       tagIcon: 'upload',
       layout: 'colFormItem',
       defaultValue: null,
@@ -529,7 +529,7 @@ export const layoutComponents = [
       showLabel: true,
       changeTag: true,
       labelWidth: null,
-      tag: 'el-button',
+      tag: 'lk-button',
       tagIcon: 'button',
       span: 24,
       layout: 'colFormItem',
@@ -539,7 +539,7 @@ export const layoutComponents = [
       default: '主要按钮'
     },
     type: 'primary',
-    icon: 'el-icon-search',
+    icon: 'lk-icon-search',
     round: false,
     size: 'medium',
     plain: false,
@@ -550,7 +550,7 @@ export const layoutComponents = [
     __config__: {
       layout: 'colFormItem',
       tagIcon: 'table',
-      tag: 'el-table',
+      tag: 'lk-table',
       document: 'https://element.eleme.cn/#/zh-CN/component/table',
       span: 24,
       formId: 101,
@@ -568,7 +568,7 @@ export const layoutComponents = [
       children: [{
         __config__: {
           layout: 'raw',
-          tag: 'el-table-column',
+          tag: 'lk-table-column',
           renderKey: 15957617660153
         },
         prop: 'date',
@@ -576,7 +576,7 @@ export const layoutComponents = [
       }, {
         __config__: {
           layout: 'raw',
-          tag: 'el-table-column',
+          tag: 'lk-table-column',
           renderKey: 15957617660152
         },
         prop: 'address',
@@ -584,7 +584,7 @@ export const layoutComponents = [
       }, {
         __config__: {
           layout: 'raw',
-          tag: 'el-table-column',
+          tag: 'lk-table-column',
           renderKey: 15957617660151
         },
         prop: 'name',
@@ -592,13 +592,13 @@ export const layoutComponents = [
       }, {
         __config__: {
           layout: 'raw',
-          tag: 'el-table-column',
+          tag: 'lk-table-column',
           renderKey: 1595774496335,
           children: [
             {
               __config__: {
                 label: '按钮',
-                tag: 'el-button',
+                tag: 'lk-button',
                 tagIcon: 'button',
                 layout: 'raw',
                 renderKey: 1595779809901
@@ -607,7 +607,7 @@ export const layoutComponents = [
                 default: '主要按钮'
               },
               type: 'primary',
-              icon: 'el-icon-search',
+              icon: 'lk-icon-search',
               round: false,
               size: 'medium'
             }

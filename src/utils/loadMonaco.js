@@ -1,6 +1,6 @@
-import loadScript from './loadScript'
-import ELEMENT from 'element-ui'
-import pluginsConfig from './pluginsConfig'
+import { LkLoading } from '@lucky/lucky-ui';
+import loadScript from './loadScript';
+import pluginsConfig from './pluginsConfig';
 
 // monaco-editor单例
 let monacoEidtor
@@ -18,11 +18,11 @@ export default function loadMonaco(cb) {
   const { monacoEditorUrl: vs } = pluginsConfig
 
   // 使用element ui实现加载提示
-  const loading = ELEMENT.Loading.service({
+  const loading = LkLoading.service({
     fullscreen: true,
     lock: true,
     text: '编辑器资源初始化中...',
-    spinner: 'el-icon-loading',
+    spinner: 'lk-icon-loading',
     background: 'rgba(255, 255, 255, 0.5)'
   })
 

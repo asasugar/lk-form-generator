@@ -1,0 +1,132 @@
+import {
+  LkAlert,
+  LkAutocomplete,
+  LkBadge,
+  LkBreadcrumb,
+  LkBreadcrumbItem,
+  LkButton,
+  LkButtonGroup,
+  LkCard,
+  LkCarousel,
+  LkCarouselItem,
+  LkCascader,
+  LkCheckbox,
+  LkCheckboxButton,
+  LkCheckboxGroup,
+  LkCol,
+  LkCollapse,
+  LkCollapseItem,
+  LkColorPicker,
+  LkContainer,
+  LkDatePicker,
+  LkDialog,
+  LkDivider,
+  LkDrawer,
+  LkDropdown,
+  LkDropdownItem,
+  LkDropdownMenu,
+  LkEditableCell,
+  LkForm,
+  LkFormItem,
+  LkIcon,
+  LkImage,
+  LkInput,
+  LkInputNumber,
+  LkLink,
+  LkLoading,
+  LkMessage,
+  LkMessageBox,
+  LkNotification,
+  LkOption,
+  LkOptionGroup,
+  LkPageHeader,
+  LkPagination,
+  LkPopconfirm,
+  LkPopover,
+  LkProgress,
+  LkRadio,
+  LkRadioButton,
+  LkRadioGroup,
+  LkRow,
+  LkSelect,
+  LkSelectPlus,
+  LkSlider,
+  LkSwitch,
+  LkTabPane,
+  LkTable,
+  LkTableColumn,
+  LkTabs,
+  LkTag,
+  LkTimePicker,
+  LkTimeSelect,
+  LkTooltip,
+  LkTransfer,
+  LkTree,
+  LkUpload
+} from '@lucky/lucky-ui';
+import Vue from 'vue';
+
+Vue.use(LkDrawer);
+Vue.use(LkPagination);
+Vue.use(LkDialog);
+Vue.use(LkAutocomplete);
+Vue.use(LkDropdown);
+Vue.use(LkDropdownMenu);
+Vue.use(LkDropdownItem);
+Vue.use(LkInput);
+Vue.use(LkInputNumber);
+Vue.use(LkRadio);
+Vue.use(LkRadioGroup);
+Vue.use(LkRadioButton);
+Vue.use(LkCheckbox);
+Vue.use(LkCheckboxButton);
+Vue.use(LkCheckboxGroup);
+Vue.use(LkSwitch);
+Vue.use(LkSelect);
+Vue.use(LkOption);
+Vue.use(LkOptionGroup);
+Vue.use(LkButton);
+Vue.use(LkButtonGroup);
+Vue.use(LkTable);
+Vue.use(LkTableColumn);
+Vue.use(LkDatePicker);
+Vue.use(LkTimeSelect);
+Vue.use(LkTimePicker);
+Vue.use(LkPopover);
+Vue.use(LkTooltip);
+Vue.use(LkBreadcrumb);
+Vue.use(LkBreadcrumbItem);
+Vue.use(LkForm);
+Vue.use(LkFormItem);
+Vue.use(LkTabs);
+Vue.use(LkTabPane);
+Vue.use(LkTag);
+Vue.use(LkTree);
+Vue.use(LkSlider);
+Vue.use(LkIcon);
+Vue.use(LkRow);
+Vue.use(LkCol);
+Vue.use(LkUpload);
+Vue.use(LkProgress);
+Vue.use(LkBadge);
+Vue.use(LkCard);
+Vue.use(LkCarousel);
+Vue.use(LkCarouselItem);
+Vue.use(LkCollapse);
+Vue.use(LkCollapseItem);
+Vue.use(LkCascader);
+Vue.use(LkTransfer);
+Vue.use(LkContainer);
+Vue.use(LkLink);
+Vue.use(LkDivider);
+Vue.use(LkImage);
+Vue.use(LkPageHeader);
+Vue.use(LkLoading);
+Vue.use(LkMessageBox);
+Vue.use(LkMessage);
+Vue.use(LkSelectPlus);
+Vue.use(LkPopconfirm);
+Vue.use(LkEditableCell);
+Vue.use(LkNotification);
+Vue.use(LkColorPicker);
+Vue.use(LkAlert);

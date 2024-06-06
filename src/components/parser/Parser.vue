@@ -3,15 +3,15 @@ import { deepClone } from '@/utils/index'
 import render from '@/components/render/render.js'
 
 const ruleTrigger = {
-  'el-input': 'blur',
-  'el-input-number': 'blur',
-  'el-select': 'change',
-  'el-radio-group': 'change',
-  'el-checkbox-group': 'change',
-  'el-cascader': 'change',
-  'el-time-picker': 'change',
-  'el-date-picker': 'change',
-  'el-rate': 'change'
+  'lk-input': 'blur',
+  'lk-input-number': 'blur',
+  'lk-select': 'change',
+  'lk-radio-group': 'change',
+  'lk-checkbox-group': 'change',
+  'lk-cascader': 'change',
+  'lk-time-picker': 'change',
+  'lk-date-picker': 'change',
+  'lk-rate': 'change'
 }
 
 const layouts = {
@@ -22,27 +22,27 @@ const layouts = {
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
     return (
-      <el-col span={config.span}>
-        <el-form-item label-width={labelWidth} prop={scheme.__vModel__}
+      <lk-col span={config.span}>
+        <lk-form-item label-width={labelWidth} prop={scheme.__vModel__}
           label={config.showLabel ? config.label : ''}>
           <render conf={scheme} on={listeners} />
-        </el-form-item>
-      </el-col>
+        </lk-form-item>
+      </lk-col>
     )
   },
   rowFormItem(h, scheme) {
     let child = renderChildren.apply(this, arguments)
     if (scheme.type === 'flex') {
-      child = <el-row type={scheme.type} justify={scheme.justify} align={scheme.align}>
+      child = <lk-row type={scheme.type} justify={scheme.justify} align={scheme.align}>
               {child}
-            </el-row>
+            </lk-row>
     }
     return (
-      <el-col span={scheme.span}>
-        <el-row gutter={scheme.gutter}>
+      <lk-col span={scheme.span}>
+        <lk-row gutter={scheme.gutter}>
           {child}
-        </el-row>
-      </el-col>
+        </lk-row>
+      </lk-col>
     )
   }
 }
@@ -51,31 +51,32 @@ function renderFrom(h) {
   const { formConfCopy } = this
 
   return (
-    <el-row gutter={formConfCopy.gutter}>
-      <el-form
+    <lk-row gutter={formConfCopy.gutter}>
+      <lk-form
         size={formConfCopy.size}
-        label-position={formConfCopy.labelPosition}
+        lablk-position={formConfCopy.labelPosition}
         disabled={formConfCopy.disabled}
         label-width={`${formConfCopy.labelWidth}px`}
         ref={formConfCopy.formRef}
         // model不能直接赋值 https://github.com/vuejs/jsx/issues/49#issuecomment-472013664
         props={{ model: this[formConfCopy.formModel] }}
         rules={this[formConfCopy.formRules]}
+        test="123"
       >
         {renderFormItem.call(this, h, formConfCopy.fields)}
         {formConfCopy.formBtns && formBtns.call(this, h)}
-      </el-form>
-    </el-row>
+      </lk-form>
+    </lk-row>
   )
 }
 
 function formBtns(h) {
-  return <el-col>
-    <el-form-item size="large">
-      <el-button type="primary" onClick={this.submitForm}>提交</el-button>
-      <el-button onClick={this.resetForm}>重置</el-button>
-    </el-form-item>
-  </el-col>
+  return <lk-col>
+    <lk-form-item size="large">
+      <lk-button type="primary" onClick={this.submitForm}>提交</lk-button>
+      <lk-button onClick={this.resetForm}>重置</lk-button>
+    </lk-form-item>
+  </lk-col>
 }
 
 function renderFormItem(h, elementList) {

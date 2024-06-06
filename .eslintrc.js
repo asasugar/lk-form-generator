@@ -14,7 +14,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-unresolved': 0,
     'comma-dangle': [2, 'never'],
-    semi: [2, 'never'],
+    'semi': 0,
     'no-unused-expressions': 0,
     'no-plusplus': 0,
     'import/prefer-default-export': 0,

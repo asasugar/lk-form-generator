@@ -9,7 +9,7 @@
           </a>
         </div>
       </div>
-      <el-scrollbar class="left-scrollbar">
+      <lk-scrollbar class="left-scrollbar">
         <div class="components-list">
           <div v-for="(item, listIndex) in leftComponents" :key="listIndex">
             <div class="components-title">
@@ -39,30 +39,30 @@
             </draggable>
           </div>
         </div>
-      </el-scrollbar>
+      </lk-scrollbar>
     </div>
 
     <div class="center-board">
       <div class="action-bar">
-        <el-button icon="el-icon-video-play" type="text" @click="run">
+        <lk-button icon="lk-icon-video-play" type="text" @click="run">
           运行
-        </el-button>
-        <el-button icon="el-icon-view" type="text" @click="showJson">
+        </lk-button>
+        <lk-button icon="lk-icon-view" type="text" @click="showJson">
           查看json
-        </el-button>
-        <el-button icon="el-icon-download" type="text" @click="download">
+        </lk-button>
+        <lk-button icon="lk-icon-download" type="text" @click="download">
           导出vue文件
-        </el-button>
-        <el-button class="copy-btn-main" icon="el-icon-document-copy" type="text" @click="copy">
+        </lk-button>
+        <lk-button class="copy-btn-main" icon="lk-icon-document-copy" type="text" @click="copy">
           复制代码
-        </el-button>
-        <el-button class="delete-btn" icon="el-icon-delete" type="text" @click="empty">
+        </lk-button>
+        <lk-button class="delete-btn" icon="lk-icon-delete" type="text" @click="empty">
           清空
-        </el-button>
+        </lk-button>
       </div>
-      <el-scrollbar class="center-scrollbar">
-        <el-row class="center-board-row" :gutter="formConf.gutter">
-          <el-form
+      <lk-scrollbar class="center-scrollbar">
+        <lk-row class="center-board-row" :gutter="formConf.gutter">
+          <lk-form
             :size="formConf.size"
             :label-position="formConf.labelPosition"
             :disabled="formConf.disabled"
@@ -85,9 +85,9 @@
             <div v-show="!drawingList.length" class="empty-info">
               从左侧拖入或点选组件进行表单设计
             </div>
-          </el-form>
-        </el-row>
-      </el-scrollbar>
+          </lk-form>
+        </lk-row>
+      </lk-scrollbar>
     </div>
 
     <right-panel
@@ -133,7 +133,7 @@ import {
   inputComponents, selectComponents, layoutComponents, formConf
 } from '@/components/generator/config'
 import {
-  exportDefault, beautifierConf, isNumberStr, titleCase, deepClone, isObjectObject
+  beautifierConf, titleCase, deepClone, isObjectObject
 } from '@/utils/index'
 import {
   makeUpHtml, vueTemplate, vueScript, cssStyle
@@ -284,7 +284,7 @@ export default {
       const respData = dataPath.split('.').reduce((pre, item) => pre[item], resp)
 
       // 将请求回来的数据，赋值到指定属性。
-      // 以el-tabel为例，根据Element文档，应该将数据赋值给el-tabel的data属性，所以dataConsumer的值应为'data';
+      // 以lk-tabel为例，根据Element文档，应该将数据赋值给lk-tabel的data属性，所以dataConsumer的值应为'data';
       // 此时赋值代码可写成 component[dataConsumer] = respData；
       // 但为支持更深层级的赋值（如：dataConsumer的值为'options.data'）,使用setObjectValueReduce
       this.setObjectValueReduce(component, dataConsumer, respData)
@@ -362,6 +362,8 @@ export default {
     generate(data) {
       const func = this[`exec${titleCase(this.operationType)}`]
       this.generateConf = data
+      console.log('%c [ func ]-367', 'font-size:13px; background:pink; color:#bf2c9f;', func, data)
+
       func && func(data)
     },
     execRun(data) {

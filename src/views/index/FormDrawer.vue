@@ -1,57 +1,57 @@
 <template>
   <div>
-    <el-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
+    <lk-drawer v-bind="$attrs" v-on="$listeners" @opened="onOpen" @close="onClose">
       <div style="height:100%">
-        <el-row style="height:100%;overflow:auto">
-          <el-col :md="24" :lg="12" class="left-editor">
+        <lk-row style="height:100%;overflow:auto">
+          <lk-col :md="24" :lg="12" class="left-editor">
             <div class="setting" title="资源引用" @click="showResource">
-              <el-badge :is-dot="!!resources.length" class="item">
-                <i class="el-icon-setting" />
-              </el-badge>
+              <lk-badge :is-dot="!!resources.length" class="item">
+                <i class="lk-icon-setting" />
+              </lk-badge>
             </div>
-            <el-tabs v-model="activeTab" type="card" class="editor-tabs">
-              <el-tab-pane name="html">
+            <lk-tabs v-model="activeTab" type="card" class="editor-tabs">
+              <lk-tab-pane name="html">
                 <span slot="label">
-                  <i v-if="activeTab==='html'" class="el-icon-edit" />
-                  <i v-else class="el-icon-document" />
+                  <i v-if="activeTab==='html'" class="lk-icon-edit" />
+                  <i v-else class="lk-icon-document" />
                   template
                 </span>
-              </el-tab-pane>
-              <el-tab-pane name="js">
+              </lk-tab-pane>
+              <lk-tab-pane name="js">
                 <span slot="label">
-                  <i v-if="activeTab==='js'" class="el-icon-edit" />
-                  <i v-else class="el-icon-document" />
+                  <i v-if="activeTab==='js'" class="lk-icon-edit" />
+                  <i v-else class="lk-icon-document" />
                   script
                 </span>
-              </el-tab-pane>
-              <el-tab-pane name="css">
+              </lk-tab-pane>
+              <lk-tab-pane name="css">
                 <span slot="label">
-                  <i v-if="activeTab==='css'" class="el-icon-edit" />
-                  <i v-else class="el-icon-document" />
+                  <i v-if="activeTab==='css'" class="lk-icon-edit" />
+                  <i v-else class="lk-icon-document" />
                   css
                 </span>
-              </el-tab-pane>
-            </el-tabs>
+              </lk-tab-pane>
+            </lk-tabs>
             <div v-show="activeTab==='html'" id="editorHtml" class="tab-editor" />
             <div v-show="activeTab==='js'" id="editorJs" class="tab-editor" />
             <div v-show="activeTab==='css'" id="editorCss" class="tab-editor" />
-          </el-col>
-          <el-col :md="24" :lg="12" class="right-preview">
+          </lk-col>
+          <lk-col :md="24" :lg="12" class="right-preview">
             <div class="action-bar" :style="{'text-align': 'left'}">
               <span class="bar-btn" @click="runCode">
-                <i class="el-icon-refresh" />
+                <i class="lk-icon-refresh" />
                 刷新
               </span>
               <span class="bar-btn" @click="exportFile">
-                <i class="el-icon-download" />
+                <i class="lk-icon-download" />
                 导出vue文件
               </span>
               <span ref="copyBtn" class="bar-btn copy-btn">
-                <i class="el-icon-document-copy" />
+                <i class="lk-icon-document-copy" />
                 复制代码
               </span>
               <span class="bar-btn delete-btn" @click="$emit('update:visible', false)">
-                <i class="el-icon-circle-close" />
+                <i class="lk-icon-circle-close" />
                 关闭
               </span>
             </div>
@@ -64,10 +64,10 @@
               @load="iframeLoad"
             />
             <div v-show="!isIframeLoaded" v-loading="true" class="result-wrapper" />
-          </el-col>
-        </el-row>
+          </lk-col>
+        </lk-row>
       </div>
-    </el-drawer>
+    </lk-drawer>
     <resource-dialog
       :visible.sync="resourceVisible"
       :origin-resource="resources"
@@ -326,7 +326,7 @@ export default {
   }
 }
 @include action-bar;
-::v-deep .el-drawer__header {
+::v-deep .lk-drawer__header {
   display: none;
 }
 </style>

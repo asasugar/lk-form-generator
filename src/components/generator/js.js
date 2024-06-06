@@ -1,6 +1,6 @@
-import { isArray } from 'util'
-import { exportDefault, titleCase, deepClone } from '@/utils/index'
-import ruleTrigger from './ruleTrigger'
+import { deepClone, exportDefault, titleCase } from '@/utils/index';
+import { isArray } from 'util';
+import ruleTrigger from './ruleTrigger';
 
 const units = {
   KB: '1024',
@@ -71,8 +71,8 @@ function buildAttributes(scheme, dataList, ruleList, optionsList, methodList, pr
     buildProps(scheme, propsList)
   }
 
-  // 处理el-upload的action
-  if (scheme.action && config.tag === 'el-upload') {
+  // 处理lk-upload的action
+  if (scheme.action && config.tag === 'lk-upload') {
     uploadVarList.push(
       `${scheme.__vModel__}Action: '${scheme.action}',
       ${scheme.__vModel__}fileList: [],`
@@ -175,7 +175,7 @@ function buildRules(scheme, ruleList) {
 // 构建options
 function buildOptions(scheme, optionsList) {
   if (scheme.__vModel__ === undefined) return
-  // el-cascader直接有options属性，其他组件都是定义在slot中，所以有两处判断
+  // lk-cascader直接有options属性，其他组件都是定义在slot中，所以有两处判断
   let { options } = scheme
   if (!options) options = scheme.__slot__.options
   if (scheme.__config__.dataType === 'dynamic') { options = [] }
@@ -188,7 +188,7 @@ function buildProps(scheme, propsList) {
   propsList.push(str)
 }
 
-// el-upload的BeforeUpload
+// lk-upload的BeforeUpload
 function buildBeforeUpload(scheme) {
   const config = scheme.__config__
   const unitNum = units[config.sizeUnit]; let rightSizeCode = ''; let acceptCode = ''; const
@@ -215,7 +215,7 @@ function buildBeforeUpload(scheme) {
   return returnList.length ? str : ''
 }
 
-// el-upload的submit
+// lk-upload的submit
 function buildSubmitUpload(scheme) {
   const str = `submitUpload() {
     this.$refs['${scheme.__vModel__}'].submit()

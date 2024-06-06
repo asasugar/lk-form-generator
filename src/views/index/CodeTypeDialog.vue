@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog
+    <lk-dialog
       v-bind="$attrs"
       width="500px"
       :close-on-click-modal="false"
@@ -9,43 +9,43 @@
       @open="onOpen"
       @close="onClose"
     >
-      <el-row :gutter="15">
-        <el-form
+      <lk-row :gutter="15">
+        <lk-form
           ref="elForm"
           :model="formData"
           :rules="rules"
           size="medium"
           label-width="100px"
         >
-          <el-col :span="24">
-            <el-form-item label="生成类型" prop="type">
-              <el-radio-group v-model="formData.type">
-                <el-radio-button
+          <lk-col :span="24">
+            <lk-form-item label="生成类型" prop="type">
+              <lk-radio-group v-model="formData.type">
+                <lk-radio-button
                   v-for="(item, index) in typeOptions"
                   :key="index"
                   :label="item.value"
                   :disabled="item.disabled"
                 >
                   {{ item.label }}
-                </el-radio-button>
-              </el-radio-group>
-            </el-form-item>
-            <el-form-item v-if="showFileName" label="文件名" prop="fileName">
-              <el-input v-model="formData.fileName" placeholder="请输入文件名" clearable />
-            </el-form-item>
-          </el-col>
-        </el-form>
-      </el-row>
+                </lk-radio-button>
+              </lk-radio-group>
+            </lk-form-item>
+            <lk-form-item v-if="showFileName" label="文件名" prop="fileName">
+              <lk-input v-model="formData.fileName" placeholder="请输入文件名" clearable />
+            </lk-form-item>
+          </lk-col>
+        </lk-form>
+      </lk-row>
 
       <div slot="footer">
-        <el-button @click="close">
+        <lk-button @click="close">
           取消
-        </el-button>
-        <el-button type="primary" @click="handelConfirm">
+        </lk-button>
+        <lk-button type="primary" @click="handelConfirm">
           确定
-        </el-button>
+        </lk-button>
       </div>
-    </el-dialog>
+    </lk-dialog>
   </div>
 </template>
 <script>

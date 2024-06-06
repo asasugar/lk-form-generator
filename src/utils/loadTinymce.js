@@ -1,6 +1,6 @@
-import loadScript from './loadScript'
-import ELEMENT from 'element-ui'
-import pluginsConfig from './pluginsConfig'
+import { LkLoading } from '@lucky/lucky-ui';
+import loadScript from './loadScript';
+import pluginsConfig from './pluginsConfig';
 
 let tinymceObj
 
@@ -12,11 +12,11 @@ export default function loadTinymce(cb) {
     return
   }
 
-  const loading = ELEMENT.Loading.service({
+  const loading = LkLoading.service({
     fullscreen: true,
     lock: true,
     text: '富文本资源加载中...',
-    spinner: 'el-icon-loading',
+    spinner: 'lk-icon-loading',
     background: 'rgba(255, 255, 255, 0.5)'
   })
 

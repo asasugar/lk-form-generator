@@ -2,9 +2,9 @@
   <div class="test-form">
     <parser :form-conf="formConf" @submit="sumbitForm1" />
     <parser :key="key2" :form-conf="formConf" @submit="sumbitForm2" />
-    <el-button @click="change">
+    <lk-button @click="change">
       change
-    </el-button>
+    </lk-button>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
               labelWidth: null,
               showLabel: true,
               changeTag: true,
-              tag: 'el-input',
+              tag: 'lk-input',
               tagIcon: 'input',
               required: true,
               layout: 'colFormItem',
@@ -53,7 +53,7 @@ export default {
               width: '100%'
             },
             clearable: true,
-            'prefix-icon': 'el-icon-mobile',
+            'prefix-icon': 'lk-icon-mobile',
             'suffix-icon': '',
             maxlength: 11,
             'show-word-limit': true,
@@ -63,7 +63,7 @@ export default {
           {
             __config__: {
               label: '日期范围',
-              tag: 'el-date-picker',
+              tag: 'lk-date-picker',
               tagIcon: 'date-range',
               defaultValue: null,
               span: 24,
@@ -102,7 +102,7 @@ export default {
                 {
                   __config__: {
                     label: '评分',
-                    tag: 'el-rate',
+                    tag: 'lk-rate',
                     tagIcon: 'rate',
                     defaultValue: 0,
                     span: 24,
@@ -142,7 +142,7 @@ export default {
               showLabel: true,
               changeTag: true,
               labelWidth: null,
-              tag: 'el-button',
+              tag: 'lk-button',
               tagIcon: 'button',
               span: 24,
               layout: 'colFormItem',
@@ -153,7 +153,7 @@ export default {
               default: '测试按钮1'
             },
             type: 'primary',
-            icon: 'el-icon-search',
+            icon: 'lk-icon-search',
             round: false,
             size: 'medium',
             plain: false,
@@ -197,7 +197,7 @@ export default {
               labelWidth: null,
               showLabel: true,
               changeTag: true,
-              tag: 'el-input',
+              tag: 'lk-input',
               tagIcon: 'input',
               required: true,
               layout: 'colFormItem',
@@ -220,7 +220,7 @@ export default {
               width: '100%'
             },
             clearable: true,
-            'prefix-icon': 'el-icon-mobile',
+            'prefix-icon': 'lk-icon-mobile',
             'suffix-icon': '',
             maxlength: 11,
             'show-word-limit': true,
@@ -230,7 +230,7 @@ export default {
           {
             __config__: {
               label: '日期范围',
-              tag: 'el-date-picker',
+              tag: 'lk-date-picker',
               tagIcon: 'date-range',
               defaultValue: null,
               span: 24,

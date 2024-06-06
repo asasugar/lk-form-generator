@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
-import ruleTrigger from './ruleTrigger'
+import ruleTrigger from './ruleTrigger';
 
 let confGlobal
 let someSpanIsNot24
 
 export function dialogWrapper(str) {
-  return `<el-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Titile">
+  return `<lk-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Titile">
     ${str}
     <div slot="footer">
-      <el-button @click="close">取消</el-button>
-      <el-button type="primary" @click="handelConfirm">确定</el-button>
+      <lk-button @click="close">取消</lk-button>
+      <lk-button type="primary" @click="handelConfirm">确定</lk-button>
     </div>
-  </el-dialog>`
+  </lk-dialog>`
 }
 
 export function vueTemplate(str) {
@@ -40,14 +40,14 @@ function buildFormTemplate(scheme, child, type) {
     labelPosition = `label-position="${scheme.labelPosition}"`
   }
   const disabled = scheme.disabled ? `:disabled="${scheme.disabled}"` : ''
-  let str = `<el-form ref="${scheme.formRef}" :model="${scheme.formModel}" :rules="${scheme.formRules}" size="${scheme.size}" ${disabled} label-width="${scheme.labelWidth}px" ${labelPosition}>
+  let str = `<lk-form ref="${scheme.formRef}" :model="${scheme.formModel}" :rules="${scheme.formRules}" size="${scheme.size}" ${disabled} label-width="${scheme.labelWidth}px" ${labelPosition}>
       ${child}
       ${buildFromBtns(scheme, type)}
-    </el-form>`
+    </lk-form>`
   if (someSpanIsNot24) {
-    str = `<el-row :gutter="${scheme.gutter}">
+    str = `<lk-row :gutter="${scheme.gutter}">
         ${str}
-      </el-row>`
+      </lk-row>`
   }
   return str
 }
@@ -55,25 +55,25 @@ function buildFormTemplate(scheme, child, type) {
 function buildFromBtns(scheme, type) {
   let str = ''
   if (scheme.formBtns && type === 'file') {
-    str = `<el-form-item size="large">
-          <el-button type="primary" @click="submitForm">提交</el-button>
-          <el-button @click="resetForm">重置</el-button>
-        </el-form-item>`
+    str = `<lk-form-item size="large">
+          <lk-button type="primary" @click="submitForm">提交</lk-button>
+          <lk-button @click="resetForm">重置</lk-button>
+        </lk-form-item>`
     if (someSpanIsNot24) {
-      str = `<el-col :span="24">
+      str = `<lk-col :span="24">
           ${str}
-        </el-col>`
+        </lk-col>`
     }
   }
   return str
 }
 
-// span不为24的用el-col包裹
+// span不为24的用lk-col包裹
 function colWrapper(scheme, str) {
   if (someSpanIsNot24 || scheme.__config__.span !== 24) {
-    return `<el-col :span="${scheme.__config__.span}">
+    return `<lk-col :span="${scheme.__config__.span}">
       ${str}
-    </el-col>`
+    </lk-col>`
   }
   return str
 }
@@ -92,9 +92,9 @@ const layouts = {
     }
     const required = !ruleTrigger[config.tag] && config.required ? 'required' : ''
     const tagDom = tags[config.tag] ? tags[config.tag](scheme) : null
-    let str = `<el-form-item ${labelWidth} ${label} prop="${scheme.__vModel__}" ${required}>
+    let str = `<lk-form-item ${labelWidth} ${label} prop="${scheme.__vModel__}" ${required}>
         ${tagDom}
-      </el-form-item>`
+      </lk-form-item>`
     str = colWrapper(scheme, str)
     return str
   },
@@ -105,16 +105,16 @@ const layouts = {
     const align = scheme.type === 'default' ? '' : `align="${scheme.align}"`
     const gutter = scheme.gutter ? `:gutter="${scheme.gutter}"` : ''
     const children = config.children.map(el => layouts[el.__config__.layout](el))
-    let str = `<el-row ${type} ${justify} ${align} ${gutter}>
+    let str = `<lk-row ${type} ${justify} ${align} ${gutter}>
       ${children.join('\n')}
-    </el-row>`
+    </lk-row>`
     str = colWrapper(scheme, str)
     return str
   }
 }
 
 const tags = {
-  'el-button': el => {
+  'lk-button': el => {
     const {
       tag, disabled
     } = attrBuilder(el)
@@ -129,7 +129,7 @@ const tags = {
     if (child) child = `\n${child}\n` // 换行
     return `<${tag} ${type} ${icon} ${round} ${size} ${plain} ${disabled} ${circle}>${child}</${tag}>`
   },
-  'el-input': el => {
+  'lk-input': el => {
     const {
       tag, disabled, vModel, clearable, placeholder, width
     } = attrBuilder(el)
@@ -148,7 +148,7 @@ const tags = {
     if (child) child = `\n${child}\n` // 换行
     return `<${tag} ${vModel} ${type} ${placeholder} ${maxlength} ${showWordLimit} ${readonly} ${disabled} ${clearable} ${prefixIcon} ${suffixIcon} ${showPassword} ${autosize} ${width}>${child}</${tag}>`
   },
-  'el-input-number': el => {
+  'lk-input-number': el => {
     const {
       tag, disabled, vModel, placeholder
     } = attrBuilder(el)
@@ -161,7 +161,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${placeholder} ${step} ${stepStrictly} ${precision} ${controlsPosition} ${min} ${max} ${disabled}></${tag}>`
   },
-  'el-select': el => {
+  'lk-select': el => {
     const {
       tag, disabled, vModel, clearable, placeholder, width
     } = attrBuilder(el)
@@ -172,7 +172,7 @@ const tags = {
     if (child) child = `\n${child}\n` // 换行
     return `<${tag} ${vModel} ${placeholder} ${disabled} ${multiple} ${filterable} ${clearable} ${width}>${child}</${tag}>`
   },
-  'el-radio-group': el => {
+  'lk-radio-group': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const size = `size="${el.size}"`
     let child = buildElRadioGroupChild(el)
@@ -180,7 +180,7 @@ const tags = {
     if (child) child = `\n${child}\n` // 换行
     return `<${tag} ${vModel} ${size} ${disabled}>${child}</${tag}>`
   },
-  'el-checkbox-group': el => {
+  'lk-checkbox-group': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const size = `size="${el.size}"`
     const min = el.min ? `:min="${el.min}"` : ''
@@ -190,7 +190,7 @@ const tags = {
     if (child) child = `\n${child}\n` // 换行
     return `<${tag} ${vModel} ${min} ${max} ${size} ${disabled}>${child}</${tag}>`
   },
-  'el-switch': el => {
+  'lk-switch': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const activeText = el['active-text'] ? `active-text="${el['active-text']}"` : ''
     const inactiveText = el['inactive-text'] ? `inactive-text="${el['inactive-text']}"` : ''
@@ -201,7 +201,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${activeText} ${inactiveText} ${activeColor} ${inactiveColor} ${activeValue} ${inactiveValue} ${disabled}></${tag}>`
   },
-  'el-cascader': el => {
+  'lk-cascader': el => {
     const {
       tag, disabled, vModel, clearable, placeholder, width
     } = attrBuilder(el)
@@ -213,7 +213,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${options} ${props} ${width} ${showAllLevels} ${placeholder} ${separator} ${filterable} ${clearable} ${disabled}></${tag}>`
   },
-  'el-slider': el => {
+  'lk-slider': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const min = el.min ? `:min='${el.min}'` : ''
     const max = el.max ? `:max='${el.max}'` : ''
@@ -223,7 +223,7 @@ const tags = {
 
     return `<${tag} ${min} ${max} ${step} ${vModel} ${range} ${showStops} ${disabled}></${tag}>`
   },
-  'el-time-picker': el => {
+  'lk-time-picker': el => {
     const {
       tag, disabled, vModel, clearable, placeholder, width
     } = attrBuilder(el)
@@ -237,7 +237,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${isRange} ${format} ${valueFormat} ${pickerOptions} ${width} ${placeholder} ${startPlaceholder} ${endPlaceholder} ${rangeSeparator} ${clearable} ${disabled}></${tag}>`
   },
-  'el-date-picker': el => {
+  'lk-date-picker': el => {
     const {
       tag, disabled, vModel, clearable, placeholder, width
     } = attrBuilder(el)
@@ -251,7 +251,7 @@ const tags = {
 
     return `<${tag} ${type} ${vModel} ${format} ${valueFormat} ${width} ${placeholder} ${startPlaceholder} ${endPlaceholder} ${rangeSeparator} ${clearable} ${readonly} ${disabled}></${tag}>`
   },
-  'el-rate': el => {
+  'lk-rate': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const max = el.max ? `:max='${el.max}'` : ''
     const allowHalf = el['allow-half'] ? 'allow-half' : ''
@@ -260,7 +260,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${max} ${allowHalf} ${showText} ${showScore} ${disabled}></${tag}>`
   },
-  'el-color-picker': el => {
+  'lk-color-picker': el => {
     const { tag, disabled, vModel } = attrBuilder(el)
     const size = `size="${el.size}"`
     const showAlpha = el['show-alpha'] ? 'show-alpha' : ''
@@ -268,7 +268,7 @@ const tags = {
 
     return `<${tag} ${vModel} ${size} ${showAlpha} ${colorFormat} ${disabled}></${tag}>`
   },
-  'el-upload': el => {
+  'lk-upload': el => {
     const { tag } = el.__config__
     const disabled = el.disabled ? ':disabled=\'true\'' : ''
     const action = el.action ? `:action="${el.__vModel__}Action"` : ''
@@ -304,7 +304,7 @@ function attrBuilder(el) {
   }
 }
 
-// el-buttin 子级
+// lk-buttin 子级
 function buildElButtonChild(scheme) {
   const children = []
   const slot = scheme.__slot__ || {}
@@ -314,7 +314,7 @@ function buildElButtonChild(scheme) {
   return children.join('\n')
 }
 
-// el-input 子级
+// lk-input 子级
 function buildElInputChild(scheme) {
   const children = []
   const slot = scheme.__slot__
@@ -327,49 +327,49 @@ function buildElInputChild(scheme) {
   return children.join('\n')
 }
 
-// el-select 子级
+// lk-select 子级
 function buildElSelectChild(scheme) {
   const children = []
   const slot = scheme.__slot__
   if (slot && slot.options && slot.options.length) {
-    children.push(`<el-option v-for="(item, index) in ${scheme.__vModel__}Options" :key="index" :label="item.label" :value="item.value" :disabled="item.disabled"></el-option>`)
+    children.push(`<lk-option v-for="(item, index) in ${scheme.__vModel__}Options" :key="index" :label="item.label" :value="item.value" :disabled="item.disabled"></lk-option>`)
   }
   return children.join('\n')
 }
 
-// el-radio-group 子级
+// lk-radio-group 子级
 function buildElRadioGroupChild(scheme) {
   const children = []
   const slot = scheme.__slot__
   const config = scheme.__config__
   if (slot && slot.options && slot.options.length) {
-    const tag = config.optionType === 'button' ? 'el-radio-button' : 'el-radio'
+    const tag = config.optionType === 'button' ? 'lk-radio-button' : 'lk-radio'
     const border = config.border ? 'border' : ''
     children.push(`<${tag} v-for="(item, index) in ${scheme.__vModel__}Options" :key="index" :label="item.value" :disabled="item.disabled" ${border}>{{item.label}}</${tag}>`)
   }
   return children.join('\n')
 }
 
-// el-checkbox-group 子级
+// lk-checkbox-group 子级
 function buildElCheckboxGroupChild(scheme) {
   const children = []
   const slot = scheme.__slot__
   const config = scheme.__config__
   if (slot && slot.options && slot.options.length) {
-    const tag = config.optionType === 'button' ? 'el-checkbox-button' : 'el-checkbox'
+    const tag = config.optionType === 'button' ? 'lk-checkbox-button' : 'lk-checkbox'
     const border = config.border ? 'border' : ''
     children.push(`<${tag} v-for="(item, index) in ${scheme.__vModel__}Options" :key="index" :label="item.value" :disabled="item.disabled" ${border}>{{item.label}}</${tag}>`)
   }
   return children.join('\n')
 }
 
-// el-upload 子级
+// lk-upload 子级
 function buildElUploadChild(scheme) {
   const list = []
   const config = scheme.__config__
-  if (scheme['list-type'] === 'picture-card') list.push('<i class="el-icon-plus"></i>')
-  else list.push(`<el-button size="small" type="primary" icon="el-icon-upload">${config.buttonText}</el-button>`)
-  if (config.showTip) list.push(`<div slot="tip" class="el-upload__tip">只能上传不超过 ${config.fileSize}${config.sizeUnit} 的${scheme.accept}文件</div>`)
+  if (scheme['list-type'] === 'picture-card') list.push('<i class="lk-icon-plus"></i>')
+  else list.push(`<lk-button size="small" type="primary" icon="lk-icon-upload">${config.buttonText}</lk-button>`)
+  if (config.showTip) list.push(`<div slot="tip" class="lk-upload__tip">只能上传不超过 ${config.fileSize}${config.sizeUnit} 的${scheme.accept}文件</div>`)
   return list.join('\n')
 }
 

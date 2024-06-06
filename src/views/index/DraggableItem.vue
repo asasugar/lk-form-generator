@@ -9,12 +9,12 @@ const components = {
       <span class="drawing-item-copy" title="复制" onClick={event => {
         copyItem(currentItem, list); event.stopPropagation()
       }}>
-        <i class="el-icon-copy-document" />
+        <i class="lk-icon-copy-document" />
       </span>,
       <span class="drawing-item-delete" title="删除" onClick={event => {
         deleteItem(index, list); event.stopPropagation()
       }}>
-        <i class="el-icon-delete" />
+        <i class="lk-icon-delete" />
       </span>
     ]
   }
@@ -29,18 +29,18 @@ const layouts = {
     let labelWidth = config.labelWidth ? `${config.labelWidth}px` : null
     if (config.showLabel === false) labelWidth = '0'
     return (
-      <el-col span={config.span} class={className}
+      <lk-col span={config.span} class={className}
         nativeOnClick={event => { activeItem(currentItem); event.stopPropagation() }}>
-        <el-form-item label-width={labelWidth}
+        <lk-form-item label-width={labelWidth}
           label={config.showLabel ? config.label : ''} required={config.required}>
           <render key={config.renderKey} conf={currentItem} onInput={ event => {
             this.$set(config, 'defaultValue', event)
           }}>
             {child}
           </render>
-        </el-form-item>
+        </lk-form-item>
         {components.itemBtns.apply(this, arguments)}
-      </el-col>
+      </lk-col>
     )
   },
   rowFormItem(h, currentItem, index, list) {
@@ -51,13 +51,13 @@ const layouts = {
       : 'drawing-row-item'
     let child = renderChildren.apply(this, arguments)
     if (currentItem.type === 'flex') {
-      child = <el-row type={currentItem.type} justify={currentItem.justify} align={currentItem.align}>
+      child = <lk-row type={currentItem.type} justify={currentItem.justify} align={currentItem.align}>
               {child}
-            </el-row>
+            </lk-row>
     }
     return (
-      <el-col span={config.span}>
-        <el-row gutter={config.gutter} class={className}
+      <lk-col span={config.span}>
+        <lk-row gutter={config.gutter} class={className}
           nativeOnClick={event => { activeItem(currentItem); event.stopPropagation() }}>
           <span class="component-name">{config.componentName}</span>
           <draggable list={config.children || []} animation={340}
@@ -65,8 +65,8 @@ const layouts = {
             {child}
           </draggable>
           {components.itemBtns.apply(this, arguments)}
-        </el-row>
-      </el-col>
+        </lk-row>
+      </lk-col>
     )
   },
   raw(h, currentItem, index, list) {
